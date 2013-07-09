@@ -23,7 +23,7 @@ get '/nextrip/:stop' do
   departures[:stop] = page.css('#ctl00_mainContent_NexTripResultsDisplay_lblLocation').text
   departures[:web] = url
 
-  real_time = params[:realTime].nil? ? false : params[:realTime] == true
+  real_time = params[:realTime].nil? ? false : params[:realTime] == "true"
 
   rows.each do |row|
     departure = {}
