@@ -23,6 +23,8 @@ get '/nextrip/:stop' do
   departures[:stop] = page.css('#ctl00_mainContent_NexTripResultsDisplay_lblLocation').text
   departures[:web] = url
 
+  real_time = params[:realTime].nil? ? false : params[:realTime] == true
+
   rows.each do |row|
     departure = {}
     route = row.css('.col1').text
@@ -32,7 +34,7 @@ get '/nextrip/:stop' do
       departure["time"] = row.css('.col3').text
       classes = row.css('.col3')[0]["class"].split
       departure["realTime"] = !(classes.include? "red")
-      departures[:nextrips] << departure
+      departures[:nextrips] << departure if (real_time && departure["realTime"]) || !real_time
     end
   end
   json departures
