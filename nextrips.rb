@@ -20,7 +20,7 @@ get '/nextrip/:stop' do
 
   departures = {nextrips:[]}
 
-  departures[:stop] = page.css('#ctl00_mainContent_NexTripControl1_NexTripResults1_lblLocation').text
+  departures[:stop] = page.css('#ctl00_mainContent_NexTripResultsDisplay_lblLocation').text
   departures[:web] = url
 
   rows.each do |row|
