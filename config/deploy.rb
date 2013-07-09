@@ -5,9 +5,9 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :deploy_to, "/web/nextrips"
-set :deploy_via, :copy
-set :copy_cache, "/tmp/nextrips" 
-set :copy_compression, :gzip
+set :ssh_options, { :forward_agent => true }
+set :branch, "master"
+set :deploy_via, :remote_cache
 
 set :user, "deploy"
 set :use_sudo, false
