@@ -9,4 +9,5 @@ group :develop do
   gem 'shotgun'
   gem 'thin'
   gem 'capistrano'
+  gem 'rvm-capistrano'
 end

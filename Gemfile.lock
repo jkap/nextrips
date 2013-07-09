@@ -27,6 +27,8 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rdiscount (2.1.6)
+    rvm-capistrano (1.4.0)
+      capistrano (>= 2.0.0)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.3)
@@ -53,6 +55,7 @@ DEPENDENCIES
   capistrano
   nokogiri
   rdiscount
+  rvm-capistrano
   shotgun
   sinatra
   sinatra-contrib
