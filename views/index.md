@@ -1,5 +1,7 @@
 # Nextrips
 
-what are you doing here
+I'll add docs later
 
-please leave
+leave me alone, dad
+
+--[jkap](http://josh-kaplan.com)
