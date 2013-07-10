@@ -5,7 +5,7 @@ require 'json'
 set :json_encoder, JSON
 
 
-def departures_for_stop(stop, route = nil, real_time = nil)
+def departures_for_stop(stop, desired_route = nil, real_time = nil)
   url = "http://www.metrotransit.org/Mobile/NexTripGps.aspx?stopnumber=#{stop}"
 
   page = Nokogiri::HTML(open(url))
@@ -20,7 +20,7 @@ def departures_for_stop(stop, route = nil, real_time = nil)
   rows.each do |row|
     departure = {}
     route = row.css('.col1').text
-    if ((route && route.match(route)) || !route)
+    if ((desired_route && route.match(desired_route.to_s)) || !desired_route)
       departure[:route] = route
       departure[:desc] = row.css('.col2').text
       departure[:time] = row.css('.col3').text
@@ -44,7 +44,7 @@ get '/nextrip/:stop' do
 end
 
 get '/commute' do
-  stops = [{stop: 51839, route: 535}, {stop: 1854}, {stop: 53543}]
+  stops = [{stop: 56156, route: 18}, {stop: 53543, route: 535}, {stop: 51839, route: 535}, {stop: 1872, route: 18}]
 
   @nextrips = []
 
