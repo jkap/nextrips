@@ -4,6 +4,8 @@ gem 'nokogiri'
 gem 'sinatra'
 gem 'rdiscount'
 gem 'sinatra-contrib'
+gem 'httparty'
+gem 'haml'
 
 group :develop do
   gem 'shotgun'

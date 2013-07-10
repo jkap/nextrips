@@ -1,0 +1,8 @@
+%table{border: 1}
+  - @nextrips.each do |departures|
+    - departure = departures[:nextrips].first
+    %tr
+      %td=departures[:stop]
+      %td=departure[:route]
+      %td=departure[:time]
+      %td=departure[:desc]
