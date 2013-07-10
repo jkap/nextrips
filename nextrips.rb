@@ -48,8 +48,10 @@ get '/commute' do
 
   @nextrips = []
 
+  real_time = params[:realTime].nil? ? false : params[:realTime] == "true"
+
   stops.each do |stop|
-    departures = departures_for_stop(stop[:stop], stop[:route], stop[:real_time])
+    departures = departures_for_stop(stop[:stop], stop[:route], real_time)
     @nextrips << departures
   end
 
