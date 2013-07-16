@@ -1,8 +1,12 @@
-%table{border: 1}
-  - @nextrips.each do |departures|
-    - departures[:nextrips].each do |departure|
-      %tr
-        %td=departures[:stop]
-        %td=departure[:route]
-        %td=departure[:time]
-        %td=departure[:desc]
+%html
+  %head
+    %meta{"http-equiv" => "refresh", content: 30}
+  %body
+    %table{border: 1}
+      - @nextrips.each do |departures|
+        - departures[:nextrips].each do |departure|
+          %tr
+            %td=departures[:stop]
+            %td=departure[:route]
+            %td=departure[:time]
+            %td=departure[:desc]
