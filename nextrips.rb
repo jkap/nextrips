@@ -52,6 +52,7 @@ get '/commute' do
 
   stops.each do |stop|
     departures = departures_for_stop(stop[:stop], stop[:route], real_time)
+    departures[:nextrips] = departures[:nextrips][0..4]
     @nextrips << departures
   end
 
