@@ -1,12 +1,18 @@
 %html
   %head
     %meta{"http-equiv" => "refresh", content: 30}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1"}
+    %link{rel: "stylesheet", href: "/stylesheets/bootstrap.min.css"}
+    %link{rel: "stylesheet", href: "/stylesheets/bootstrap-responsive.min.css"}
   %body
-    %table{border: 1}
-      - @nextrips.each do |departures|
-        - departures[:nextrips].each do |departure|
-          %tr
-            %td=departures[:stop]
-            %td=departure[:route]
-            %td=departure[:time]
-            %td=departure[:desc]
+    .container
+      .row
+        .span12
+          - @nextrips.each do |departures|
+            %h3=departures[:stop]
+            %table.table.table-striped
+              - departures[:nextrips].each do |departure|
+                %tr
+                  %td=departure[:route]
+                  %td=departure[:time]
+                  %td=departure[:desc]
