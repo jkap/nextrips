@@ -6,7 +6,7 @@ set :json_encoder, JSON
 
 
 def departures_for_stop(stop, desired_route = nil, real_time = nil)
-  url = "http://www.metrotransit.org/Mobile/NexTripGps.aspx?stopnumber=#{stop}"
+  url = "http://www.metrotransit.org/Mobile/Nextrip.aspx?stopnumber=#{stop}"
 
   page = Nokogiri::HTML(open(url, read_timeout: 5))
 
@@ -14,7 +14,7 @@ def departures_for_stop(stop, desired_route = nil, real_time = nil)
 
   departures = {nextrips:[]}
 
-  departures[:stop] = page.css('#ctl00_mainContent_NexTripResultsDisplay_lblLocation').text
+  departures[:stop] = page.css('#ctl00_mainContent_NexTripControl1_NexTripResults1_lblLocation').text
   departures[:web] = url
 
   rows.each do |row|
