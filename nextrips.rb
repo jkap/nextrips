@@ -44,7 +44,7 @@ get '/nextrip/:stop' do
 end
 
 get '/commute' do
-  stops = [{stop: 56156, route: 18}, {stop: 53543, route: 535}, {stop: 51839, route: 535}, {stop: 1872, route: 18}]
+  stops = [{stop: 1218, route: 18}, {stop: 53543, route: 535}, {stop: 51839, route: 535}, {stop: 1872, route: 18}]
 
   @nextrips = []
 
