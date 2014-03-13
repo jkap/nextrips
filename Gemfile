@@ -7,10 +7,10 @@ gem 'sinatra-contrib'
 gem 'httparty'
 gem 'haml'
 gem 'tzinfo'
+gem 'thin'
 
 group :development do
   gem 'shotgun'
-  gem 'thin'
   gem 'capistrano'
   gem 'rvm-capistrano'
 end
