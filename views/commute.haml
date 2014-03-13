@@ -1,8 +1,11 @@
 %html
   %head
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"}
+    %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+    %meta{name: "apple-mobile-web-app-status-bar-style", content: "black-translucent"}
     %link{rel: "stylesheet", href: "/stylesheets/bootstrap.min.css"}
     %link{rel: "stylesheet", href: "/stylesheets/bootstrap-responsive.min.css"}
+    %link{rel: "stylesheet", href: "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"}
     %link{rel: "apple-touch-icon", href: "/images/iPhone@2x.png", sizes: "120x120"}
     %link{rel: "apple-touch-icon", href: "/images/iPhone.png", sizes: "60x60"}
     %title FLEXTRIPS
@@ -10,7 +13,10 @@
     .container
       %h1
         FLEX IT
-        %small= TZInfo::Timezone.get('America/Chicago').now.strftime("%l:%M")
+        %small
+          = TZInfo::Timezone.get('America/Chicago').now.strftime("%l:%M")
+          %a{:href => "/commute"}
+            %i.fa.fa-refresh
       .row
         .span12
           - @nextrips.each do |departures|
