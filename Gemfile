@@ -6,8 +6,9 @@ gem 'rdiscount'
 gem 'sinatra-contrib'
 gem 'httparty'
 gem 'haml'
+gem 'tzinfo'
 
-group :develop do
+group :development do
   gem 'shotgun'
   gem 'thin'
   gem 'capistrano'

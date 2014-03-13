@@ -7,8 +7,8 @@
   %body
     .container
       %h1
-        FLEXTRIPS
-        %small= Time.now.strftime("%l:%M")
+        FLEX IT
+        %small= TZInfo::Timezone.get('America/Chicago').now.strftime("%l:%M")
       .row
         .span12
           - @nextrips.each do |departures|
