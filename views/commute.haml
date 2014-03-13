@@ -3,8 +3,10 @@
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1"}
     %link{rel: "stylesheet", href: "/stylesheets/bootstrap.min.css"}
     %link{rel: "stylesheet", href: "/stylesheets/bootstrap-responsive.min.css"}
+    %title FLEXTRIPS
   %body
     .container
+      %h1 FLEXTRIPS
       .row
         .span12
           - @nextrips.each do |departures|
@@ -15,3 +17,4 @@
                   %td=departure[:route]
                   %td=departure[:time]
                   %td=departure[:desc]
+      %h4 josh kaplan made this josh@nrm.lc
