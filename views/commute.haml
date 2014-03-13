@@ -6,7 +6,9 @@
     %title FLEXTRIPS
   %body
     .container
-      %h1 FLEXTRIPS
+      %h1
+        FLEXTRIPS
+        %small= Time.now.strftime("%l:%M")
       .row
         .span12
           - @nextrips.each do |departures|
