@@ -48,8 +48,9 @@ end
 get '/commute' do
   stops = [
     {stop: 1218, routes: ['18E', '18D']},
+    {stop: 53543, routes: [535]},
     {stop: 48627, routes: [540]},
-    {stop: 51839, routes: [540]},
+    {stop: 51839, routes: [540, 535]},
     {stop: 1436, routes: [18]}
   ]
 
